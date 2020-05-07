@@ -1,0 +1,58 @@
+[
+  {
+    "name": "",
+    "password": "Test Password",
+    "email": "testByMV_incorrect@da.ta",
+    "policyCB": true,
+    "termsCB": true,
+    "offersCB": true
+  },
+  {
+    "name": "Incorrect Data",
+    "password": "",
+    "email": "testByMV_incorrect@da.ta",
+    "policyCB": true,
+    "termsCB": true,
+    "offersCB": true
+  },
+  {
+    "name": "Incorrect Data",
+    "password": "Test Password",
+    "email": "",
+    "policyCB": true,
+    "termsCB": true,
+    "offersCB": true
+  },
+  {
+    "name": "Incorrect Data",
+    "password": "Test Password",
+    "email": "testByMV_incorrect@da.ta",
+    "policyCB": false,
+    "termsCB": true,
+    "offersCB": true
+  },
+  {
+    "name": "Incorrect Data",
+    "password": "Test Password",
+    "email": "testByMV_incorrect@da.ta",
+    "policyCB": true,
+    "termsCB": false,
+    "offersCB": true
+  },
+  {
+    "name": "Incorrect Data",
+    "password": "Test Password",
+    "email": "testByMV_incorrect@da.ta",
+    "policyCB": true,
+    "termsCB": true,
+    "offersCB": false
+  },
+  {
+    "name": "Incorrect Data",
+    "password": "Test Password",
+    "email": "testByMV_incorrect@data",
+    "policyCB": true,
+    "termsCB": true,
+    "offersCB": false
+  }
+]

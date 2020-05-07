@@ -1,6 +1,7 @@
 const SignupPage = require('../../pageObjects/signup');
 const StartTestPage = require('../../pageObjects/startTest');
 const Faker = require('faker');
+const testData = require('../../testData/registrationUserEntity');
 
 describe('Registration Process', () => {
   beforeEach(() => {
@@ -23,9 +24,42 @@ describe('Registration Process', () => {
       cy.get(SignupPage.objects.termsCBField).click();
       cy.get(SignupPage.objects.offersCBField).click();
       cy.get(SignupPage.objects.signupButton).click();
-      cy.wait('@result', { timeout: 10000 });
+      cy.wait('@result', { requestTimeout: 10000 });
 
       cy.url().should('include', StartTestPage.url);
+    });
+  });
+
+  describe('Incorrect registration', () => {
+    testData.forEach((item) => {
+      it('Causes an error', () => {
+        if (item.name) {
+          cy.get(SignupPage.objects.nameField).type(item.name);
+        }
+        if (item.password) {
+          cy.get(SignupPage.objects.passwordField).type(item.password);
+        }
+        if (item.email) {
+          cy.get(SignupPage.objects.emailField).type(item.email);
+        }
+        if (item.policyCB) {
+          cy.get(SignupPage.objects.policyCBField).click();
+        }
+        if (item.termsCB) {
+          cy.get(SignupPage.objects.termsCBField).click();
+        }
+        if (item.offersCB) {
+          cy.get(SignupPage.objects.offersCBField).click();
+        }
+        cy.get(SignupPage.objects.signupButton).click();
+
+        cy.on('fail', (err, runnable) => {
+          expect(err.message).to.include('No request ever occurred.');
+          return false;
+        });
+
+        cy.wait('@result');
+      });
     });
   });
 });
