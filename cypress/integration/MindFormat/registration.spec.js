@@ -1,5 +1,5 @@
-const SignupPage = require('./../../page_objects/signup');
-const StartTestPage = require('./../../page_objects/startTest');
+const SignupPage = require('../../pageObjects/signup');
+const StartTestPage = require('../../pageObjects/startTest');
 const Faker = require('faker');
 
 describe('Registration Process', () => {
