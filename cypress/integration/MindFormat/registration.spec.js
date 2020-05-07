@@ -3,6 +3,7 @@ const StartTestPage = require('../../pageObjects/startTest');
 const Faker = require('faker');
 const testData = require('../../testData/registrationUserEntity');
 
+// MWF-REG
 describe('Registration Process', () => {
   beforeEach(() => {
     cy.visit(SignupPage.url);
@@ -11,6 +12,7 @@ describe('Registration Process', () => {
     cy.route('GET', '/api/result').as('result');
   });
 
+  // NWF-REG-A001
   describe('Correct registration', () => {
     it('Leads to test page', () => {
       cy.get(SignupPage.objects.nameField).type(
@@ -30,6 +32,7 @@ describe('Registration Process', () => {
     });
   });
 
+  // NWF-REG-A002
   describe('Incorrect registration', () => {
     testData.forEach((item) => {
       it('Causes an error', () => {

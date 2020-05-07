@@ -54,5 +54,13 @@
     "policyCB": true,
     "termsCB": true,
     "offersCB": false
+  },
+  {
+    "name": "Incorrect Data",
+    "password": "Test Password",
+    "email": "matvei.r.vasilev@gmail.com",
+    "policyCB": true,
+    "termsCB": true,
+    "offersCB": false
   }
 ]
