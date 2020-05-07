@@ -11,7 +11,7 @@ describe('Registration Process', () => {
   });
 
   describe('Correct registration', () => {
-    it('Leads to profile page', () => {
+    it('Leads to test page', () => {
       cy.get(SignupPage.objects.nameField).type(
         `${Faker.name.findName()} By MV`
       );
